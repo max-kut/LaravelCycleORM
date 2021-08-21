@@ -123,7 +123,7 @@ class LaravelServiceProvider extends BaseServiceProvider
         $this->app->alias(DatabaseProviderInterface::class, DatabaseManager::class);
     }
 
-    private function registerEntityManager()
+    protected function registerEntityManager()
     {
         $this->app->singleton(EntityManagerContract::class, function () {
             return $this->app[EntityManager::class];
